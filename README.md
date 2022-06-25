@@ -46,10 +46,35 @@ user show           -> Show all user names
 >ex: GET http://127.0.0.1:5000/user
 
 
-CRUD projects
+same way we can perform project and groups CRUD operations also. All the API call well explain in code comment sections.
 
-project add model3    -> Add the project model3
-project delete model3 -> Delete the project model3
-project show model3   -> Show model3, its users (and groups)
-project show          -> Show all project names
+#Assigning
+---------
+assign user elon group tesla
+----------------
+> ex: POST http://127.0.0.1:5000/assign/group
+> { 
+> "name":"tesla",
+> "user":"elon"
+> }
+
+assign user elon project model3 owner
+------------------
+> ex: POST http://127.0.0.1:5000/assign/user
+> {
+> "name":"elon",
+> "project":"model3",
+> "role":"owner" 
+> }
+>
+
+
+assign group tesla project model3 employee
+-------------------
+> ex: POST http://127.0.0.1:5000/assign/project
+> {   
+> "name":"model3",
+> "group":"tesla",
+> "role":"owner" 
+> }
 
