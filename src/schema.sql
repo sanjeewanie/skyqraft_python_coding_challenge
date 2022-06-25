@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2022 at 01:15 AM
+-- Generation Time: Jun 25, 2022 at 04:50 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -40,7 +40,9 @@ INSERT INTO `groups` (`id`, `name`) VALUES
 (1, 'group1'),
 (2, 'group2'),
 (3, 'group3'),
-(4, 'tesla');
+(4, 'tesla'),
+(5, 'testgroup1'),
+(6, 'testgroup2');
 
 -- --------------------------------------------------------
 
@@ -60,7 +62,9 @@ CREATE TABLE `projects` (
 --
 
 INSERT INTO `projects` (`id`, `name`, `type`, `description`) VALUES
-(1, 'project1', '', '');
+(1, 'project1', 'client', 'client project from python '),
+(2, 'model3', 'internal', 'Python leraninf project for internals'),
+(3, 'model4', 'client', 'Client project');
 
 -- --------------------------------------------------------
 
@@ -80,11 +84,10 @@ CREATE TABLE `project_user` (
 --
 
 INSERT INTO `project_user` (`id`, `user_id`, `project_id`, `project_role`) VALUES
-(1, 1, 1, 1),
-(2, 2, 1, 2),
-(3, 1, 1, 1),
-(4, 3, 1, 1),
-(5, 3, 1, 3);
+(6, 4, 2, 4),
+(7, 5, 2, 4),
+(8, 6, 2, 4),
+(9, 7, 2, 4);
 
 -- --------------------------------------------------------
 
@@ -127,9 +130,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `title`, `status`) VALUES
-(1, 'Sanjeewanie', 'sanji152@gmail.com', 'Mrs', 1),
+(1, 'updateelon', 'update_elon@gmail.com', 'Miss', 1),
 (2, 'nalaka ', 'nalaka@gmail.com', 'Mr', 1),
-(3, 'elon', 'elon@gmail.com', 'Mrs', 1);
+(4, 'testusername', 'test@gmail.com', 'Mrs', 1),
+(5, 'testuser1', 'testuser1@gmail.com', 'Miss', 1),
+(6, 'testuser2', 'testuser2@gmail.com', 'Miss', 1),
+(7, 'testuser3', 'testuser3@gmail.com', 'Miss', 1);
 
 -- --------------------------------------------------------
 
@@ -148,7 +154,12 @@ CREATE TABLE `user_group` (
 --
 
 INSERT INTO `user_group` (`id`, `user_id`, `user_group`) VALUES
-(1, 3, 4);
+(3, 1, 1),
+(4, 2, 2),
+(5, 4, 3),
+(6, 5, 3),
+(7, 6, 3),
+(8, 7, 3);
 
 --
 -- Indexes for dumped tables
@@ -198,19 +209,19 @@ ALTER TABLE `user_group`
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `project_user`
 --
 ALTER TABLE `project_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -222,13 +233,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `user_group`
 --
 ALTER TABLE `user_group`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
