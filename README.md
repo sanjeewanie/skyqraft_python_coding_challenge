@@ -51,7 +51,7 @@ same way we can perform project and groups CRUD operations also. All the API cal
 #Assigning
 ---------
 assign user elon group tesla
-----------------
+
 > ex: POST http://127.0.0.1:5000/assign/group
 > { 
 > "name":"tesla",
@@ -59,7 +59,7 @@ assign user elon group tesla
 > }
 
 assign user elon project model3 owner
-------------------
+
 > ex: POST http://127.0.0.1:5000/assign/user
 > {
 > "name":"elon",
@@ -70,7 +70,7 @@ assign user elon project model3 owner
 
 
 assign group tesla project model3 employee
--------------------
+
 > ex: POST http://127.0.0.1:5000/assign/project
 > {   
 > "name":"model3",
